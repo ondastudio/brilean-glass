@@ -96,7 +96,7 @@ scene.background = new THREE.Color(0xf2f2f2) // default background color
 // scene.background = new THREE.Color(0xF1FF66) // white
 
 // const rgbeLoader = new RGBELoader()
-// rgbeLoader.load('assets/2k.hdr', (texture) => {
+// rgbeLoader.load('static/2k.hdr', (texture) => {
 //     texture.mapping = THREE.EquirectangularReflectionMapping
 
 //     // scene.environment = texture     // reflections
@@ -109,7 +109,7 @@ scene.background = new THREE.Color(0xf2f2f2) // default background color
 const rgbeLoader = new RGBELoader()
 let hdrTexture = null
 
-rgbeLoader.load('assets/2k.hdr', (texture) => {
+rgbeLoader.load('static/2k.hdr', (texture) => {
   texture.mapping = THREE.EquirectangularReflectionMapping
   scene.environment = texture // always used for reflections
   hdrTexture = texture
@@ -135,7 +135,7 @@ material.opacity = 0.6
 const gltfLoader = new GLTFLoader();
 
 gltfLoader.load(
-    'assets/star_simple_lights.glb', (gltf) => {
+    'static/star_simple_lights.glb', (gltf) => {
         gltf.scene.traverse((child) => {
             child.material = material
         })
